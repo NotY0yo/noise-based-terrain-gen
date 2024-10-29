@@ -14,8 +14,6 @@ surface
 
 """
 
-white.seed(1)
-
 
 def display_noise_map(noise_map):
     """
@@ -59,9 +57,12 @@ from .
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
+    # seed for testing:
+    SEED = "noise-based-terrain-gen"
+
 
     # Creating a PerlinNoiseMap instance with custom parameters
-    perlin_map = perlin.PerlinNoiseMap(width=50, height=50, scale=10, octaves=4, persistence=0.1)
+    perlin_map = perlin_map.PerlinNoiseMap(width=50, height=50, scale=10, octaves=4, persistence=0.1)
 
     # Generating a noises map
     noiseMap = perlin_map.generate_noise_map()

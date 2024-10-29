@@ -1,4 +1,4 @@
-from noises.noise import Noise
+from noises.utils import Noise
 
 
 class PerlinNoise(Noise):
