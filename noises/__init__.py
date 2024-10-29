@@ -1,3 +1,4 @@
+from . import noise
 from . import perlin_map
 from . import perlin
 from . import white
@@ -9,6 +10,7 @@ from . import perlin_ridge
 from . import simplex
 from . import simplex2
 from . import simplex_ridge
+
 
 """
 

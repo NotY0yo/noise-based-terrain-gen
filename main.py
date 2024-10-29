@@ -1,6 +1,6 @@
 import random
 from matplotlib import cm
-from noise import *
+from noises import *
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,10 +19,10 @@ white.seed(1)
 
 def display_noise_map(noise_map):
     """
-    Displays the given noise map using matplotlib.
+    Displays the given noises map using matplotlib.
 from .
     Parameters:
-    - noise_map (numpy.ndarray): A 2D numpy array representing the noise map to be displayed.
+    - noise_map (numpy.ndarray): A 2D numpy array representing the noises map to be displayed.
 
     Returns:
     None.
@@ -42,7 +42,7 @@ from .
     x, y = np.meshgrid(x, y)
 
 
-    # Displaying the noise map as an image.
+    # Displaying the noises map as an image.
     ax.plot_surface(X=x, Y=y, Z=noise_map, vmin=noise_map.min() * 2, cmap=cm.Blues)
 
     # Setting the title and labels for the plot.
@@ -63,11 +63,11 @@ if __name__ == '__main__':
     # Creating a PerlinNoiseMap instance with custom parameters
     perlin_map = perlin.PerlinNoiseMap(width=50, height=50, scale=10, octaves=4, persistence=0.1)
 
-    # Generating a noise map
+    # Generating a noises map
     noiseMap = perlin_map.generate_noise_map()
 
     print(f"x:{noiseMap.shape[0]} , y: {noiseMap.shape[1]}")
-    # Displaying the noise map
+    # Displaying the noises map
     display_noise_map(noiseMap)
     """
     import matplotlib.pyplot as plt

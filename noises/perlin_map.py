@@ -10,17 +10,17 @@ https://codepal.ai/code-generator/query/5pIVmmBb/perlin-noise-map-python
 
 class PerlinNoiseMap:
     """
-    A class to generate and display Perlin noise maps using customizable parameters.
+    A class to generate and display Perlin noises maps using customizable parameters.
 
-    Perlin noise is a type of gradient noise used in computer graphics and procedural generation.
-    This class provides a way to generate Perlin noise maps and visualize them using matplotlib.
+    Perlin noises is a type of gradient noises used in computer graphics and procedural generation.
+    This class provides a way to generate Perlin noises maps and visualize them using matplotlib.
 
     Attributes:
-    - width (int): The width of the generated noise map.
-    - height (int): The height of the generated noise map.
-    - scale (float): The scale of the noise map, which affects the frequency of the noise.
-    - octaves (int): The number of octaves used to generate the noise map, which affects the level of detail.
-    - persistence (float): The persistence of the noise map, which affects the amplitude of each octave.
+    - width (int): The width of the generated noises map.
+    - height (int): The height of the generated noises map.
+    - scale (float): The scale of the noises map, which affects the frequency of the noises.
+    - octaves (int): The number of octaves used to generate the noises map, which affects the level of detail.
+    - persistence (float): The persistence of the noises map, which affects the amplitude of each octave.
     """
 
     def __init__(self, width: int, height: int, scale: float, octaves: int, persistence: float):
@@ -28,11 +28,11 @@ class PerlinNoiseMap:
         Constructs a new PerlinNoiseMap instance.
 
         Parameters:
-        - width (int): The width of the generated noise map.
-        - height (int): The height of the generated noise map.
-        - scale (float): The scale of the noise map, which affects the frequency of the noise.
-        - octaves (int): The number of octaves used to generate the noise map, which affects the level of detail.
-        - persistence (float): The persistence of the noise map, which affects the amplitude of each octave.
+        - width (int): The width of the generated noises map.
+        - height (int): The height of the generated noises map.
+        - scale (float): The scale of the noises map, which affects the frequency of the noises.
+        - octaves (int): The number of octaves used to generate the noises map, which affects the level of detail.
+        - persistence (float): The persistence of the noises map, which affects the amplitude of each octave.
 
         Raises:
         - ValueError: If any of the parameters (width, height, scale, octaves, persistence) is invalid.
@@ -57,10 +57,10 @@ class PerlinNoiseMap:
 
     def generate_noise_map(self):
         """
-        Generates a Perlin noise map using the specified parameters.
+        Generates a Perlin noises map using the specified parameters.
 
         Returns:
-        numpy.ndarray: A 2D numpy array representing the generated noise map.
+        numpy.ndarray: A 2D numpy array representing the generated noises map.
 
         Raises:
         None.
@@ -69,10 +69,10 @@ class PerlinNoiseMap:
         # Generating an empty 2D array of zeros with the specified width and height.
         noise_map = np.zeros((self.height, self.width))
 
-        # Generating random gradients for each point in the noise map.
+        # Generating random gradients for each point in the noises map.
         gradients = np.random.randn(self.height, self.width, 2)
 
-        # Generating the noise map by combining multiple octaves of Perlin noise.
+        # Generating the noises map by combining multiple octaves of Perlin noises.
         for octave in range(self.octaves):
             # Calculating the frequency and amplitude for the current octave.
             frequency = 2 ** octave
@@ -112,21 +112,21 @@ class PerlinNoiseMap:
             interpolated_bottom = self._interpolate(dot_product_bottom_left, dot_product_bottom_right, weight_x)
             interpolated = self._interpolate(interpolated_top, interpolated_bottom, weight_y)
 
-            # Adding the interpolated values to the noise map.
+            # Adding the interpolated values to the noises map.
             noise_map += interpolated * amplitude
 
-        # Normalizing the noise map to the range [0, 1].
+        # Normalizing the noises map to the range [0, 1].
         noise_map = (noise_map - np.min(noise_map)) / (np.max(noise_map) - np.min(noise_map))
 
-        # Returning the generated noise map.
+        # Returning the generated noises map.
         return noise_map
 
     def display_noise_map(self, noise_map):
         """
-        Displays the given noise map using matplotlib.
+        Displays the given noises map using matplotlib.
 
         Parameters:
-        - noise_map (numpy.ndarray): A 2D numpy array representing the noise map to be displayed.
+        - noise_map (numpy.ndarray): A 2D numpy array representing the noises map to be displayed.
 
         Returns:
         None.
@@ -138,7 +138,7 @@ class PerlinNoiseMap:
         # Creating a figure and axis for the plot.
         fig, ax = plt.subplots()
 
-        # Displaying the noise map as an image.
+        # Displaying the noises map as an image.
         ax.imshow(noise_map, cmap='gray', origin='lower')
 
         # Adding a colorbar to the plot.
@@ -208,8 +208,8 @@ if __name__ == '__main__':
     # Creating a PerlinNoiseMap instance with custom parameters
     perlin_map = PerlinNoiseMap(width=100, height=100, scale=10, octaves=4, persistence=0.5)
 
-    # Generating a noise map
+    # Generating a noises map
     noise_map = perlin_map.generate_noise_map()
 
-    # Displaying the noise map
+    # Displaying the noises map
     perlin_map.display_noise_map(noise_map)
