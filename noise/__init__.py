@@ -1,5 +1,6 @@
+from . import perlin_map
 from . import perlin
-
+from . import white
 
 
 """

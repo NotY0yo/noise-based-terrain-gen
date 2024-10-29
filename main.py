@@ -1,4 +1,4 @@
-
+import random
 from matplotlib import cm
 from noise import *
 import numpy as np
@@ -14,7 +14,7 @@ surface
 
 """
 
-
+white.seed(1)
 
 
 def display_noise_map(noise_map):
