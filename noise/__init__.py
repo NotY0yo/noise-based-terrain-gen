@@ -1,18 +1,17 @@
 from . import perlin_map
 from . import perlin
 from . import white
-
-
-"""
 from . import constant
 from . import sin
 from . import white
-
 from . import perlin2
 from . import perlin_ridge
 from . import simplex
 from . import simplex2
 from . import simplex_ridge
+
+"""
+
 from . import worley
 from . import worley_edge
 from . import billow
